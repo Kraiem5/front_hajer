@@ -8,7 +8,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { User } from '../user';
 
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         (res) => {
           localStorage.setItem('token', JSON.stringify(res.user));
-          this.auth.currentUserSig.set(res.user);
+          // this.auth.currentUserSig.set(res.user);
           this.router.navigate(['/']);
         },
         (err) => {

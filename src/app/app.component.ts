@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './pages/header/header.component';
-import { CurrentUserService } from './auth/current-user.service';
+// import { CurrentUserService } from './auth/current-user.service';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -11,11 +11,11 @@ import { CurrentUserService } from './auth/current-user.service';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  constructor(private currentUser: CurrentUserService) {}
+  // constructor(private currentUser: CurrentUserService) {}
 
   ngOnInit() {
     setTimeout(() => {
-      this.currentUser.setCurrentUser();
+      // this.currentUser.setCurrentUser();
     }, 2000);
   }
 }

@@ -14,38 +14,97 @@
       <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-6 mt-4">
         <div>
           <label
-            for="username"
+            for="nprenomom"
             class="block text-sm font-medium leading-6 text-gray-900"
-            >Username</label
+            >Nom :</label
           >
           <div class="mt-2">
             <input
-              id="username"
-              name="username"
+              id="nom"
+              name="nom"
               type="text"
-              formControlName="username"
+              formControlName="nom"
               class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-rose-300 sm:text-sm sm:leading-6"
             />
           </div>
         </div>
-
         <div>
           <label
-            for="email"
+            for="prenom"
             class="block text-sm font-medium leading-6 text-gray-900"
-            >Email address</label
+            >prenom :</label
           >
           <div class="mt-2">
             <input
-              id="email"
-              name="email"
+              id="prenom"
+              name="prenom"
+              type="text"
+              formControlName="prenom"
+              class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-rose-300 sm:text-sm sm:leading-6"
+            />
+          </div>
+        </div>
+        
+        <div>
+          <label
+          for="email"
+          class="block text-sm font-medium leading-6 text-gray-900"
+          >Address Email :</label
+          >
+          <div class="mt-2">
+            <input
+            id="email"
+            name="email"
               type="email"
               autocomplete="email"
               formControlName="email"
               class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-rose-300 sm:text-sm sm:leading-6"
-            />
+              />
+            </div>
           </div>
-        </div>
+          <div class="form-group">
+            <label
+            for="username"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >Role :</label>
+            <select id="role" name="role" formControlName="role" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-rose-300 sm:text-sm sm:leading-6"
+            required>
+              <option *ngFor="let role of roles; let i = index" [value]="role.name" >ADMIN</option>
+            </select>
+          </div>
+          
+          <div>
+            <label
+              for="telephone"
+              class="block text-sm font-medium leading-6 text-gray-900"
+              >Telephone :</label
+            >
+            <div class="mt-2">
+              <input
+                id="telephone"
+                name="telephone"
+                type="number"
+                formControlName="telephone"
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-rose-300 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div>
+            <label
+              for="cin"
+              class="block text-sm font-medium leading-6 text-gray-900"
+              >Cin :</label
+            >
+            <div class="mt-2">
+              <input
+                id="cin"
+                name="cin"
+                type="number"
+                formControlName="cin"
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-rose-300 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
 
         <div>
           <div class="flex items-center justify-between">
@@ -53,7 +112,7 @@
               for="password"
               class="block text-sm font-medium leading-6 text-gray-900"
               >Password</label
-            >
+              >
           </div>
           <div class="mt-2">
             <input
@@ -62,6 +121,25 @@
               type="password"
               autocomplete="current-password"
               formControlName="password"
+              class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-rose-300 sm:text-sm sm:leading-6"
+            />
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center justify-between">
+            <label
+              for="confirmPassword"
+              class="block text-sm font-medium leading-6 text-gray-900"
+              >Confirm Password :</label
+              >
+          </div>
+          <div class="mt-2">
+            <input
+              id="confirmPassword"
+              name="confirmPassword"
+              type="password"
+              autocomplete="current-password"
+              formControlName="confirmPassword"
               class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-rose-300 sm:text-sm sm:leading-6"
             />
           </div>

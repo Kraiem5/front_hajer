@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { AuthService } from '../../auth/auth.service';
+// import { AuthService } from '../../auth/auth.service';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../../auth/user';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -17,11 +18,11 @@ export class HeaderComponent {
   router = inject(Router);
   http = inject(HttpClient);
   ngOnInit() {
-    if (JSON.parse(localStorage.getItem('token')!)) {
-      this.auth.currentUserSig.set(JSON.parse(localStorage.getItem('token')!));
-    } else {
-      this.auth.currentUserSig.set(null);
-    }
+    // if (JSON.parse(localStorage.getItem('token')!)) {
+    //   this.auth.currentUserSig.set(JSON.parse(localStorage.getItem('token')!));
+    // } else {
+    //   this.auth.currentUserSig.set(null);
+    // }
   }
 
   userMenuIsOpened: boolean = false;
@@ -44,7 +45,7 @@ export class HeaderComponent {
 
   logout() {
     localStorage.setItem('token', '');
-    this.auth.currentUserSig.set(null);
+    // this.auth.currentUserSig.set(null);
     this.router.navigateByUrl('/');
     this.userMenuIsOpened = false;
   }

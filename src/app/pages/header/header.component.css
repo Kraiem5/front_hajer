@@ -20,8 +20,8 @@
 }
 
 .header-container {
-  background-color: var(--color-8);
-  color: var(--color-1);
+  background-color:blue;
+  color: black
 }
 
 .login,
